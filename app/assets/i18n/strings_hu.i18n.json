@@ -123,6 +123,7 @@
       "deviceType": "Eszköz típusa",
       "deviceModel": "Eszköz modell",
       "port": "Port",
+      "discoveryTimeout": "Felfedezési időtúllépés",
       "portWarning": "Előfordulhat, hogy más eszközök nem észlelik eszközét, mert egyéni portot használ. (alapértelmezett: {defaultPort})",
       "encryption": "Titkosítás",
       "multicastGroup": "Multicast",
@@ -348,7 +349,14 @@
       "single": "Fájlokat küld egy címzettnek. Az átvitel befejezése után a kijelölés törlődik.",
       "multiple": "Fájlokat küld több címzettnek. A kijelölés nem törlődik.",
       "link": "Azok a címzettek, akiknél nincs telepítve a LocalSend, letölthetik a kiválasztott fájlokat a hivatkozás megnyitásával a böngészőjükben."
+    },
+    "zoom": {
+      "title": "URL"
     }
+  },
+  "sanitization": {
+    "empty": "A fájlnév nem lehet üres",
+    "invalid": "A fájlnév érvénytelen karaktereket tartalmaz"
   },
   "tray": {
     "@info": "Az Apple irányelvei nagyon szigorúak a 'közeli' megfogalmazással kapcsolatban.",
