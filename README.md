@@ -90,6 +90,14 @@ Create a file named `settings.json` located in the same directory as the executa
 This file can be empty.
 The app will use this file to store settings instead of the default location.
 
+**Start hidden**
+
+(Updated in v1.15.0)
+
+To start the app hidden (only in tray), use the `--hidden` flag (example: `localsend_app.exe --hidden`).
+
+On v1.14.0 and earlier, the app starts hidden if `autostart` flag is set, and the hidden setting is enabled.
+
 ## How It Works
 
 LocalSend uses a secure communication protocol that allows devices to communicate with each other using a REST API. All data is sent securely over HTTPS, and the TLS/SSL certificate is generated on the fly on each device, ensuring maximum security.
@@ -100,14 +108,14 @@ For more information on the LocalSend Protocol, see the [documentation](https://
 
 To compile LocalSend from the source code, follow these steps:
 
-1. Install Flutter [directly](https://flutter.dev) or using [fvm](https://fvm.app) (see [version required](.fvm/fvm_config.json))
+1. Install Flutter [directly](https://flutter.dev) or using [fvm](https://fvm.app) (see [version required](.fvmrc))
 2. Clone the `LocalSend` repository
 3. Run `cd app` to enter the app directory
 4. Run `flutter pub get` to download dependencies
 5. Run `flutter run` to start the app
 
 > [!NOTE]
-> LocalSend currently requires an older Flutter version (specified in [.fvm/fvm_config.json](.fvm/fvm_config.json))
+> LocalSend currently requires an older Flutter version (specified in [.fvmrc](.fvmrc))
 > and thus build issues may be caused by a mismatch between the required and the (system-wide) installed Flutter version.  
 > To make development more consistent, LocalSend uses [fvm](https://fvm.app) to manage the project Flutter version.
 > After installing `fvm`, run `fvm flutter` instead of `flutter`.
