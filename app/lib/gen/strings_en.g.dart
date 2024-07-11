@@ -575,6 +575,7 @@ class _StringsSettingsTabGeneralEn {
 	String get minimizeToTray => 'Quit: Minimize to Tray/Menu Bar';
 	String get launchAtStartup => 'Autostart after login';
 	String get launchMinimized => 'Autostart: Start hidden';
+	String get showInContextMenu => 'Show LocalSend in context menu';
 	String get animations => 'Animations';
 }
 
@@ -671,6 +672,7 @@ class _StringsReceiveHistoryPageEntryActionsEn {
 
 	// Translations
 	String get open => 'Open file';
+	String get showInFolder => 'Show in folder';
 	String get info => 'Information';
 	String get deleteFromHistory => 'Delete from history';
 }
