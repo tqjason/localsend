@@ -60,6 +60,9 @@ class SendController {
 
       return server.responseJson(200, body: {
         'waiting': t.web.waiting,
+        'enterPin': t.web.enterPin,
+        'invalidPin': t.web.invalidPin,
+        'tooManyAttempts': t.web.tooManyAttempts,
         'rejected': t.web.rejected,
         'files': t.web.files,
         'fileName': t.web.fileName,
@@ -95,6 +98,21 @@ class SendController {
                   for (final entry in state.webSendState!.files.entries) entry.key: entry.value.file,
                 },
               ).toJson());
+        }
+      }
+
+      if (state.webSendState!.pin != null) {
+        final attempts = state.webSendState!.pinAttempts[request.ip] ?? 0;
+        if (attempts >= 2) {
+          return server.responseJson(429, message: 'Too many attempts.');
+        }
+
+        final pin = request.url.queryParameters['pin'];
+        if (pin != state.webSendState!.pin) {
+          if (pin?.isNotEmpty ?? false) {
+            state.webSendState!.pinAttempts[request.ip] = attempts + 1;
+          }
+          return server.responseJson(401, message: 'Invalid pin.');
         }
       }
 
@@ -232,6 +250,8 @@ class SendController {
         );
       }))),
       autoAccept: server.ref.read(settingsProvider).shareViaLinkAutoAccept,
+      pin: null,
+      pinAttempts: {},
     );
 
     server.setState(
