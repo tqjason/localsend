@@ -1,5 +1,5 @@
 {
-  "locale": "English",
+  "locale": "English(India)",
   "appName": "LocalSend",
   "general": {
     "accept": "Accept",
@@ -97,7 +97,7 @@
         "system": "System"
       },
       "saveWindowPlacement": "Quit: Save window placement",
-      "minimizeToTray": "Minimize to the System Tray/Menu Bar when closing",
+      "minimizeToTray": "Quit: Minimize to Tray/Menu Bar",
       "launchAtStartup": "Autostart after login",
       "launchMinimized": "Autostart: Start hidden",
       "showInContextMenu": "Show LocalSend in context menu",
@@ -107,7 +107,7 @@
       "title": "Receive",
       "quickSave": "@:general.quickSave",
       "autoFinish": "Auto Finish",
-      "destination": "Save to folder",
+      "destination": "Destination",
       "downloads": "(Downloads)",
       "saveToGallery": "Save media to gallery",
       "saveToHistory": "Save to history"
@@ -182,14 +182,14 @@
     },
     "subTitleMessage": "sent you a message:",
     "subTitleLink": "sent you a link:",
-    "canceled": "The sender has canceled the request."
+    "canceled": "The sender has cancelled the request."
   },
   "receiveOptionsPage": {
     "title": "Options",
     "destination": "@:settingsTab.receive.destination",
     "appDirectory": "(LocalSend folder)",
     "saveToGallery": "@:settingsTab.receive.saveToGallery",
-    "saveToGalleryOff": "Turned off automatically because there are folders."
+    "saveToGalleryOff": "Turned off automatically because there are directories."
   },
   "sendPage": {
     "waiting": "Waiting for response...",
@@ -204,8 +204,8 @@
       "title": {
         "sending": "Total progress ({time})",
         "finishedError": "Finished with error",
-        "canceledSender": "Canceled by sender",
-        "canceledReceiver": "Canceled by receiver"
+        "canceledSender": "Cancelled by sender",
+        "canceledReceiver": "Cancelled by receiver"
       },
       "count": "Files: {curr} / {n}",
       "size": "Size: {curr} / {n}",
@@ -351,15 +351,15 @@
     },
     "favoriteDialog": {
       "title": "Favorites",
-      "noFavorites": "No favorite devices yet.",
+      "noFavorites": "No favourite devices yet.",
       "addFavorite": "Add"
     },
     "favoriteDeleteDialog": {
-      "title": "Delete from favorites",
-      "content": "Do you really want to delete from favorites \"{name}\"?"
+      "title": "Delete from favourites",
+      "content": "Do you really want to delete from favourites \"{name}\"?"
     },
     "favoriteEditDialog": {
-      "titleAdd": "Add to favorites",
+      "titleAdd": "Add to favourites",
       "titleEdit": "Settings",
       "name": "Device name",
       "auto": "(auto)",
@@ -392,7 +392,7 @@
       "multiline": "Multiline"
     },
     "noFiles": {
-      "title": "No files selected",
+      "title": "No file selected",
       "content": "Please select at least one file."
     },
     "noPermission": {
