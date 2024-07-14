@@ -106,6 +106,7 @@
     "receive": {
       "title": "Alım",
       "quickSave": "@:general.quickSave",
+      "requirePin": "@:webSharePage.requirePin",
       "autoFinish": "Otomatik bitir",
       "destination": "Hedef klasör",
       "downloads": "(İndirilenler)",
@@ -161,6 +162,7 @@
     "empty": "Geçmiş yok.",
     "entryActions": {
       "open": "Dosya aç",
+      "showInFolder": "Klasörde göster",
       "info": "Bilgi",
       "deleteFromHistory": "Geçmişten sil"
     }
@@ -193,6 +195,7 @@
   "sendPage": {
     "waiting": "Alıcıdan cevap bekleniyor...",
     "rejected": "Alıcı isteği reddetti.",
+    "tooManyAttempts": "@:web.tooManyAttempts",
     "busy": "Alıcı başka bir istekle meşgul."
   },
   "progressPage": {
@@ -224,6 +227,8 @@
     "noRequests": "Henüz istek yok.",
     "encryption": "@:settingsTab.network.encryption",
     "autoAccept": "İstekleri otomatik olarak kabul et",
+    "requirePin": "PIN gerektir",
+    "pinHint": "PIN \"{pin}\"",
     "encryptionHint": "LocalSend, tarayıcıda kabul etmeniz gereken kendi-üretimli bir sertifika kullanır.",
     "pendingRequests": "Bekleyen istekler: {n}"
   },
@@ -345,6 +350,9 @@
       "title": "@:general.quickSave",
       "content": "Dosya gönderim istekleri otomatik olarak gerçekleşir. Yerel ağınızdaki herkesin size dosya gönderebileceğinin farkında olunuz."
     },
+    "pin": {
+      "title": "PIN girin"
+    },
     "sendModeHelp": {
       "title": "Gönderme Modu",
       "single": "Dosyaları bir alıcıya gönderir. Seçim, bitmiş dosya aktarımından sonra temizlenir.",
@@ -366,6 +374,9 @@
   },
   "web": {
     "waiting": "@:sendPage.waiting",
+    "enterPin": "PIN girin",
+    "invalidPin": "Geçersiz PIN",
+    "tooManyAttempts": "Çok fazla deneme",
     "rejected": "Reddedildi",
     "files": "Dosyalar",
     "fileName": "Dosya adı",

@@ -106,6 +106,7 @@
     "receive": {
       "title": "Получение",
       "quickSave": "@:general.quickSave",
+      "requirePin": "@:webSharePage.requirePin",
       "autoFinish": "Автозавершение",
       "destination": "Сохранять в папку",
       "downloads": "(Загрузки)",
@@ -114,7 +115,7 @@
     },
     "send": {
       "title": "Отправка",
-      "shareViaLinkAutoAccept": "Поделиться по ссылке: Принимать автоматически"
+      "shareViaLinkAutoAccept": "Автоматически принимать запросы в режиме 'Поделиться по ссылке'"
     },
     "network": {
       "title": "Сеть",
@@ -194,6 +195,7 @@
   "sendPage": {
     "waiting": "Ожидание ответа...",
     "rejected": "Получатель отклонил запрос.",
+    "tooManyAttempts": "@:web.tooManyAttempts",
     "busy": "Получатель занят другим запросом."
   },
   "progressPage": {

@@ -106,6 +106,7 @@
     "receive": {
       "title": "Receive",
       "quickSave": "@:general.quickSave",
+      "requirePin": "@:webSharePage.requirePin",
       "autoFinish": "Auto Finish",
       "destination": "Save to folder",
       "downloads": "(Downloads)",
@@ -114,7 +115,7 @@
     },
     "send": {
       "title": "Send",
-      "shareViaLinkAutoAccept": "Share via link: Auto accept"
+      "shareViaLinkAutoAccept": "Automatically accept requests in 'Share via link' mode"
     },
     "network": {
       "title": "Network",
@@ -194,6 +195,7 @@
   "sendPage": {
     "waiting": "Waiting for response...",
     "rejected": "The recipient has rejected the request.",
+    "tooManyAttempts": "@:web.tooManyAttempts",
     "busy": "The recipient is busy with another request."
   },
   "progressPage": {

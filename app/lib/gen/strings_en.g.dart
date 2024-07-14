@@ -242,6 +242,7 @@ class _StringsSendPageEn {
 	// Translations
 	String get waiting => 'Waiting for response...';
 	String get rejected => 'The recipient has rejected the request.';
+	String get tooManyAttempts => _root.web.tooManyAttempts;
 	String get busy => 'The recipient is busy with another request.';
 }
 
@@ -594,6 +595,7 @@ class _StringsSettingsTabReceiveEn {
 	// Translations
 	String get title => 'Receive';
 	String get quickSave => _root.general.quickSave;
+	String get requirePin => _root.webSharePage.requirePin;
 	String get autoFinish => 'Auto Finish';
 	String get destination => 'Save to folder';
 	String get downloads => '(Downloads)';
@@ -609,7 +611,7 @@ class _StringsSettingsTabSendEn {
 
 	// Translations
 	String get title => 'Send';
-	String get shareViaLinkAutoAccept => 'Share via link: Auto accept';
+	String get shareViaLinkAutoAccept => 'Automatically accept requests in \'Share via link\' mode';
 }
 
 // Path: settingsTab.network

@@ -8,11 +8,12 @@
       "showInContextMenu": "Show LocalSend in context menu"
     },
     "receive": {
+      "requirePin": "@:webSharePage.requirePin",
       "autoFinish": "Auto Finish"
     },
     "send": {
       "title": "Send",
-      "shareViaLinkAutoAccept": "Share via link: Auto accept"
+      "shareViaLinkAutoAccept": "Automatically accept requests in 'Share via link' mode"
     },
     "network": {
       "discoveryTimeout": "Discovery Timeout"
@@ -29,6 +30,9 @@
     "entryActions": {
       "showInFolder": "Show in folder"
     }
+  },
+  "sendPage": {
+    "tooManyAttempts": "@:web.tooManyAttempts"
   },
   "webSharePage": {
     "autoAccept": "Automatically accept requests",
