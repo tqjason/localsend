@@ -1,5 +1,7 @@
-## 1.16.0 (unreleased)
+## 1.15.3 (2024-07-29)
 
+- feat: reduce receive history length to 30 items to increase performance (@Tienisto)
+- feat: show error message when initialization fails for better debugging (@Tienisto)
 - fix(android): properly close app on back gesture (@Tienisto)
 
 ## 1.15.2 (2024-07-25)
