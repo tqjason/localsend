@@ -67,6 +67,7 @@
     "nearbyDevices": "Geräte in der Nähe",
     "thisDevice": "Dieses Gerät",
     "scan": "Geräte suchen",
+    "manualSending": "Manuelles Senden",
     "sendMode": "Sendemodus",
     "sendModes": {
       "single": "Einzelner Empfänger",
@@ -377,7 +378,7 @@
     "@info": "Apple Guidelines are very strict about the \"close\" wording.",
     "open": "@:general.open",
     "close": "LocalSend beenden",
-    "closeWindows": "LocalSend beenden"
+    "closeWindows": "Beenden"
   },
   "web": {
     "waiting": "@:sendPage.waiting",

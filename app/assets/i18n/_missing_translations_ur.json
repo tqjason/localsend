@@ -10,7 +10,8 @@
   "sendTab": {
     "picker": {
       "clipboard": "Paste"
-    }
+    },
+    "manualSending": "Manual sending"
   },
   "settingsTab": {
     "general": {
@@ -109,7 +110,7 @@
     "invalid": "Filename contains invalid characters"
   },
   "tray": {
-    "closeWindows": "Exit LocalSend"
+    "closeWindows": "Exit"
   },
   "web": {
     "enterPin": "Enter PIN",
