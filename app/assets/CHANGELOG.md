@@ -1,8 +1,12 @@
-## 1.15.4 (unreleased)
+## 1.15.4 (2024-08-20)
 
+- feat: add button to retry a failed file transfer (@Tienisto)
 - feat: show tooltip on the "Scan" button (@Tienisto)
+- feat: treat any URI as link, so it becomes clickable on receiver (e.g. file://, obsidian://) (@Tienisto)
+- feat(mobile): adjust button width in send tab to indicate that it's scrollable (@Tienisto)
 - feat(windows): title bar color should match the system theme (@FutoTan)
-- fix(desktop): multiple monitor setup may cause the window to be invisible at app start (@Tienisto)
+- fix: memory leak when sending files (regression in 1.15.0, 1.15.2 only fixed receiving files) (@Tienisto)
+- fix(windows): LocalSend window is invisible at app start (@Tienisto)
 - i18n: distinguish between "Exit" and "Quit" depending on the platform (@sergd88)
 - i18n: add Hindi (@rishi-singh26)
 
