@@ -46,6 +46,7 @@ class _StringsPtBr extends Translations {
 	@override late final _StringsChangelogPagePtBr changelogPage = _StringsChangelogPagePtBr._(_root);
 	@override late final _StringsAliasGeneratorPtBr aliasGenerator = _StringsAliasGeneratorPtBr._(_root);
 	@override late final _StringsDialogsPtBr dialogs = _StringsDialogsPtBr._(_root);
+	@override late final _StringsSanitizationPtBr sanitization = _StringsSanitizationPtBr._(_root);
 	@override late final _StringsTrayPtBr tray = _StringsTrayPtBr._(_root);
 	@override late final _StringsWebPtBr web = _StringsWebPtBr._(_root);
 	@override late final _StringsAssetPickerPtBr assetPicker = _StringsAssetPickerPtBr._(_root);
@@ -122,6 +123,7 @@ class _StringsSendTabPtBr extends _StringsSendTabEn {
 	@override String get nearbyDevices => 'Dispositivos próximos';
 	@override String get thisDevice => 'Este dispositivo';
 	@override String get scan => 'Procurar dispositivos';
+	@override String get manualSending => 'Envio manual';
 	@override String get sendMode => 'Modo de envio';
 	@override late final _StringsSendTabSendModesPtBr sendModes = _StringsSendTabSendModesPtBr._(_root);
 	@override String get sendModeHelp => 'Explicação';
@@ -139,6 +141,7 @@ class _StringsSettingsTabPtBr extends _StringsSettingsTabEn {
 	@override String get title => 'Configurações';
 	@override late final _StringsSettingsTabGeneralPtBr general = _StringsSettingsTabGeneralPtBr._(_root);
 	@override late final _StringsSettingsTabReceivePtBr receive = _StringsSettingsTabReceivePtBr._(_root);
+	@override late final _StringsSettingsTabSendPtBr send = _StringsSettingsTabSendPtBr._(_root);
 	@override late final _StringsSettingsTabNetworkPtBr network = _StringsSettingsTabNetworkPtBr._(_root);
 	@override late final _StringsSettingsTabOtherPtBr other = _StringsSettingsTabOtherPtBr._(_root);
 	@override String get advancedSettings => 'Configurações avançadas';
@@ -156,6 +159,7 @@ class _StringsTroubleshootPagePtBr extends _StringsTroubleshootPageEn {
 	@override String get solution => 'Solução:';
 	@override String get fixButton => 'Consertar automaticamente';
 	@override late final _StringsTroubleshootPageFirewallPtBr firewall = _StringsTroubleshootPageFirewallPtBr._(_root);
+	@override late final _StringsTroubleshootPageNoDiscoveryPtBr noDiscovery = _StringsTroubleshootPageNoDiscoveryPtBr._(_root);
 	@override late final _StringsTroubleshootPageNoConnectionPtBr noConnection = _StringsTroubleshootPageNoConnectionPtBr._(_root);
 }
 
@@ -235,6 +239,7 @@ class _StringsSendPagePtBr extends _StringsSendPageEn {
 	// Translations
 	@override String get waiting => 'Aguardando resposta...';
 	@override String get rejected => 'O destinatário rejeitou a solicitação.';
+	@override String get tooManyAttempts => _root.web.tooManyAttempts;
 	@override String get busy => 'O destinatário está ocupado com outra solicitação de transferência.';
 }
 
@@ -269,6 +274,9 @@ class _StringsWebSharePagePtBr extends _StringsWebSharePageEn {
 	@override String get requests => 'Solicitações';
 	@override String get noRequests => 'Nenhuma solicitação ainda.';
 	@override String get encryption => _root.settingsTab.network.encryption;
+	@override String get autoAccept => 'Aceitar pedidos automaticamente';
+	@override String get requirePin => 'Solicitar PIN';
+	@override String pinHint({required Object pin}) => 'O PIN é "${pin}"';
 	@override String get encryptionHint => 'LocalSend utiliza um certificado autoassinado. Você precisa aceitá-lo no navegador.';
 	@override String pendingRequests({required Object n}) => 'Solicitações pendentes: ${n}';
 }
@@ -287,6 +295,7 @@ class _StringsAboutPagePtBr extends _StringsAboutPageEn {
 	];
 	@override String get author => 'Autor';
 	@override String get contributors => 'Contribuidores';
+	@override String get packagers => 'Empacotadores';
 	@override String get translators => 'Tradutores';
 }
 
@@ -411,7 +420,20 @@ class _StringsDialogsPtBr extends _StringsDialogsEn {
 	@override late final _StringsDialogsQrPtBr qr = _StringsDialogsQrPtBr._(_root);
 	@override late final _StringsDialogsQuickActionsPtBr quickActions = _StringsDialogsQuickActionsPtBr._(_root);
 	@override late final _StringsDialogsQuickSaveNoticePtBr quickSaveNotice = _StringsDialogsQuickSaveNoticePtBr._(_root);
+	@override late final _StringsDialogsPinPtBr pin = _StringsDialogsPinPtBr._(_root);
 	@override late final _StringsDialogsSendModeHelpPtBr sendModeHelp = _StringsDialogsSendModeHelpPtBr._(_root);
+	@override late final _StringsDialogsZoomPtBr zoom = _StringsDialogsZoomPtBr._(_root);
+}
+
+// Path: sanitization
+class _StringsSanitizationPtBr extends _StringsSanitizationEn {
+	_StringsSanitizationPtBr._(_StringsPtBr root) : this._root = root, super._(root);
+
+	@override final _StringsPtBr _root; // ignore: unused_field
+
+	// Translations
+	@override String get empty => 'O nome do arquivo não pode estar vazio';
+	@override String get invalid => 'O nome do arquivo contém caracteres inválidos';
 }
 
 // Path: tray
@@ -423,6 +445,7 @@ class _StringsTrayPtBr extends _StringsTrayEn {
 	// Translations
 	@override String get open => _root.general.open;
 	@override String get close => 'Fechar LocalSend';
+	@override String get closeWindows => 'Sair';
 }
 
 // Path: web
@@ -433,6 +456,9 @@ class _StringsWebPtBr extends _StringsWebEn {
 
 	// Translations
 	@override String get waiting => _root.sendPage.waiting;
+	@override String get enterPin => 'Digite o PIN';
+	@override String get invalidPin => 'PIN inválido';
+	@override String get tooManyAttempts => 'Muitas tentativas';
 	@override String get rejected => 'Conexão Rejeitada';
 	@override String get files => 'Arquivos';
 	@override String get fileName => 'Nome do arquivo';
@@ -542,9 +568,11 @@ class _StringsSettingsTabGeneralPtBr extends _StringsSettingsTabGeneralEn {
 	@override String get language => 'Idioma';
 	@override late final _StringsSettingsTabGeneralLanguageOptionsPtBr languageOptions = _StringsSettingsTabGeneralLanguageOptionsPtBr._(_root);
 	@override String get saveWindowPlacement => 'Salvar a posição da janela ao fechar';
+	@override String get saveWindowPlacementWindows => 'Salvar posição da janela ao sair';
 	@override String get minimizeToTray => 'Minimizar para a bandeja ao fechar';
 	@override String get launchAtStartup => 'Abrir automaticamente após o login';
 	@override String get launchMinimized => 'Início automático: Abrir minimizado';
+	@override String get showInContextMenu => 'Mostrar LocalSend no menu de contexto';
 	@override String get animations => 'Animações';
 }
 
@@ -557,11 +585,23 @@ class _StringsSettingsTabReceivePtBr extends _StringsSettingsTabReceiveEn {
 	// Translations
 	@override String get title => 'Recebimento';
 	@override String get quickSave => _root.general.quickSave;
+	@override String get requirePin => _root.webSharePage.requirePin;
 	@override String get autoFinish => 'Concluir Automaticamente';
 	@override String get destination => 'Destino';
 	@override String get downloads => '(Downloads)';
 	@override String get saveToGallery => 'Salvar mídia na Galeria';
 	@override String get saveToHistory => 'Salvar no histórico';
+}
+
+// Path: settingsTab.send
+class _StringsSettingsTabSendPtBr extends _StringsSettingsTabSendEn {
+	_StringsSettingsTabSendPtBr._(_StringsPtBr root) : this._root = root, super._(root);
+
+	@override final _StringsPtBr _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Enviar';
+	@override String get shareViaLinkAutoAccept => 'Aceitar automaticamente pedidos no modo "Compartilhar por link"';
 }
 
 // Path: settingsTab.network
@@ -578,6 +618,7 @@ class _StringsSettingsTabNetworkPtBr extends _StringsSettingsTabNetworkEn {
 	@override String get deviceType => 'Tipo de dispositivo';
 	@override String get deviceModel => 'Modelo do dispositivo';
 	@override String get port => 'Porta';
+	@override String get discoveryTimeout => 'Tempo limite de descoberta';
 	@override String portWarning({required Object defaultPort}) => 'Você pode estar indetectável para outros dispositivos por estar usando uma porta customizada. (Padrão: ${defaultPort})';
 	@override String get encryption => 'Criptografia';
 	@override String get multicastGroup => 'Multicast';
@@ -610,6 +651,17 @@ class _StringsTroubleshootPageFirewallPtBr extends _StringsTroubleshootPageFirew
 	@override String get openFirewall => 'Abrir o Firewall';
 }
 
+// Path: troubleshootPage.noDiscovery
+class _StringsTroubleshootPageNoDiscoveryPtBr extends _StringsTroubleshootPageNoDiscoveryEn {
+	_StringsTroubleshootPageNoDiscoveryPtBr._(_StringsPtBr root) : this._root = root, super._(root);
+
+	@override final _StringsPtBr _root; // ignore: unused_field
+
+	// Translations
+	@override String get symptom => 'Este dispositivo não consegue descobrir outros dispositivos.';
+	@override String get solution => 'Certifique-se de que todos os dispositivos estão na mesma rede Wi-Fi e compartilham as mesmas configurações (porta, endereço multicast, criptografia). Você pode tentar digitar o endereço IP do dispositivo de destino manualmente. Se isto funcionar, considere adicionar este dispositivo aos favoritos, assim ele será descoberto automaticamente no futuro.';
+}
+
 // Path: troubleshootPage.noConnection
 class _StringsTroubleshootPageNoConnectionPtBr extends _StringsTroubleshootPageNoConnectionEn {
 	_StringsTroubleshootPageNoConnectionPtBr._(_StringsPtBr root) : this._root = root, super._(root);
@@ -629,6 +681,7 @@ class _StringsReceiveHistoryPageEntryActionsPtBr extends _StringsReceiveHistoryP
 
 	// Translations
 	@override String get open => 'Abrir arquivo';
+	@override String get showInFolder => 'Mostrar na pasta';
 	@override String get info => 'Informações';
 	@override String get deleteFromHistory => 'Remover do histórico';
 }
@@ -880,6 +933,16 @@ class _StringsDialogsQuickSaveNoticePtBr extends _StringsDialogsQuickSaveNoticeE
 	@override String get content => 'Solicitações de arquivos são aceitas automaticamente. Tenha em mente que qualquer pessoa na rede local pode enviar arquivos para você.';
 }
 
+// Path: dialogs.pin
+class _StringsDialogsPinPtBr extends _StringsDialogsPinEn {
+	_StringsDialogsPinPtBr._(_StringsPtBr root) : this._root = root, super._(root);
+
+	@override final _StringsPtBr _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'Digite o PIN';
+}
+
 // Path: dialogs.sendModeHelp
 class _StringsDialogsSendModeHelpPtBr extends _StringsDialogsSendModeHelpEn {
 	_StringsDialogsSendModeHelpPtBr._(_StringsPtBr root) : this._root = root, super._(root);
@@ -891,6 +954,16 @@ class _StringsDialogsSendModeHelpPtBr extends _StringsDialogsSendModeHelpEn {
 	@override String get single => 'Envia arquivos para um destinatário. A seleção será apagada após a conclusão da transferência dos arquivos.';
 	@override String get multiple => 'Envia arquivos para múltiplos destinatários. A seleção não será apagada.';
 	@override String get link => 'Os destinatários que não têm o LocalSend instalado podem baixar os arquivos selecionados abrindo o link fornecido no navegador.';
+}
+
+// Path: dialogs.zoom
+class _StringsDialogsZoomPtBr extends _StringsDialogsZoomEn {
+	_StringsDialogsZoomPtBr._(_StringsPtBr root) : this._root = root, super._(root);
+
+	@override final _StringsPtBr _root; // ignore: unused_field
+
+	// Translations
+	@override String get title => 'URL';
 }
 
 // Path: settingsTab.general.brightnessOptions
