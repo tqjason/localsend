@@ -19,8 +19,6 @@ class AppDelegate: FlutterAppDelegate {
         channel = FlutterMethodChannel(name: "main-delegate-channel", binaryMessenger: controller.engine.binaryMessenger)
         channel?.setMethodCallHandler(handleFlutterCall)
         
-        self.setupPendingItemsObservation()
-        
         self.setupDockIconTextDropEventListener()
     }
     
@@ -99,45 +97,26 @@ class AppDelegate: FlutterAppDelegate {
             }
         }
         
-        if !filePaths.isEmpty{
+        if !filePaths.isEmpty {
             channel?.invokeMethod("onPendingFiles", arguments: filePaths)
         }
-        if !pendingStrings.isEmpty     {
+        if !pendingStrings.isEmpty {
             channel?.invokeMethod("onPendingStrings", arguments: pendingStrings)
         }
         
         Defaults[.pendingFiles] = []
         Defaults[.pendingStrings] = []
-
-        channel?.invokeMethod("showLocalSendFromMenuBar", arguments: nil)
+        
+        self.showLocalSendFromMenuBar()
     }
     
     // START: handle opened files
     private func handleFlutterCall(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
-        case "getPendingFiles":
-            let pendingFileBookmarks = Defaults[.pendingFiles]
-            var filePaths: [String] = []
-            
-            for bookmark in pendingFileBookmarks {
-                if let url = SecurityScopedResourceManager.shared.startAccessing(bookmark: bookmark) {
-                    filePaths.append(url.path)
-                }
-            }
-            
-            result(filePaths)
-
-            Defaults[.pendingFiles] = []
-            
-            channel?.invokeMethod("showLocalSendFromMenuBar", arguments: nil)
-        case "getPendingStrings":
-            let pendingStrings = Defaults[.pendingStrings]
-
-            result(pendingStrings)
-            
-            Defaults[.pendingStrings] = []
-            
-            channel?.invokeMethod("showLocalSendFromMenuBar", arguments: nil)
+        case "methodChannelInitialized":
+            /// Any call to the channel is dropped until methodChannelInitialized is called from Flutter
+            setupPendingItemsObservation()
+            result(nil)
         case "setupStatusBar":
             let i18n = call.arguments as! [String: String]
             setupStatusBarItem(i18n: i18n)
@@ -168,7 +147,7 @@ class AppDelegate: FlutterAppDelegate {
     }
     // END: handle opened files
     
-    /// Handle **text** droped onto the Dock icon
+    /// Handle **text** dropped onto the Dock icon
     @objc func handleOpenContentsEvent(_ event: NSAppleEventDescriptor, withReplyEvent replyEvent: NSAppleEventDescriptor) {
         if let string = event.paramDescriptor(forKeyword: AEKeyword(keyDirectObject))?.stringValue {
             Defaults[.pendingStrings].append(string)
