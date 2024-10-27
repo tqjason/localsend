@@ -271,6 +271,10 @@
       "title": "Dodaj do wyboru",
       "content": "Co chcesz dodać?"
     },
+    "openFile": {
+      "title": "Otwórz plik",
+      "content": "Czy chcesz otworzyć odebrany plik?"
+    },
     "addressInput": {
       "title": "Wpisz adres",
       "hashtag": "Hashtag",
@@ -362,8 +366,7 @@
       "content": "Żądania plików są akceptowane automatycznie. Pamiętaj, że każdy w sieci lokalnej może przesyłać Ci pliki."
     },
     "quickSaveFromFavoritesNotice": {
-      "title": "@:general.quickSaveFromFavorites",
-      "content": "Żądania plików są akceptowane automatycznie z urządzeń znajdujących się na liście kontaktów."
+      "title": "@:general.quickSaveFromFavorites"
     },
     "pin": {
       "title": "Wpisz kod PIN"
